@@ -10,6 +10,10 @@ A Java practice project, written in **2017**, a 2048 small game developed based 
 ```
 2. Open the project in IDEA
 3. Run the `Game2048` class
+4. Or you can just download the release version and run the `Game2048.jar` file
+```shell
+    java -jar Game2048.jar
+```
 
 ## Features
 - Game setting (difficulty, music on/off, etc.)
