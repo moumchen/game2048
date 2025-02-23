@@ -12,9 +12,14 @@ A Java practice project, written in **2017**, a 2048 small game developed based 
 3. Run the `Game2048` class
 
 ## Features
+- Game setting (difficulty, music on/off, etc.)
+- Using keyboard to control the game (up, down, left, right) 
+- Store the progress of the game and continue the game later
+- Interesting game tips during the game
+
+## Preview
+![20250223221628_rec_.gif](readme/20250223221628_rec_.gif)
 ### Main Page: 
-![img.png](readme/img.png)
-### Setting
-![img.png](readme/setting.png)
+![main page.53.24.png](readme/main%20page.53.24.png)
 ### Game Page
-![img.png](readme/game.png)
+![img_1.png](readme/Game Page.png)
