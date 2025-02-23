@@ -1,4 +1,4 @@
 Manifest-Version: 1.0
-Main-Class: GameMain.Game2048
+Main-Class: Game2048
 Class-Path: lib/jmf.jar
 	lib/mysql-connector-java-5.1.44-bin.jar
