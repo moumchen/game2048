@@ -14,14 +14,14 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
- * ¹ØÓÚÓÎÏ· ´°¿Ú
+ * å…³äºæ¸¸æˆ çª—å£
  * @author Chenyanqian
  *
  */
 public class AboutGameFrame extends JFrame {
 	
 	/**
-	 * ĞòÁĞºÅ
+	 * åºåˆ—å·
 	 */
 	private static final long serialVersionUID = 1L;
 	int xOld = 0;
@@ -29,14 +29,14 @@ public class AboutGameFrame extends JFrame {
 	
 	public AboutGameFrame() {
 		
-		//Í¼±ê
+		//å›¾æ ‡
 		ImageIcon BackgroundIcon = new ImageIcon("images//BackgroundIMG//AboutGame.png");
 		ImageIcon Submit = new ImageIcon("images//Button//Submit.png");
 		ImageIcon Submit1 = new ImageIcon("images//Button//Submit-1.png");	
 		ImageIcon Submit2 = new ImageIcon("images//Button//Submit-2.png");
 		this.setSize(632, 709);
 		Container contain = this.getContentPane();
-		//ÍÏ¶¯ÉèÖÃ
+		//æ‹–åŠ¨è®¾ç½®
 		this.addMouseListener(new MouseAdapter() {
 		 
 			public void mousePressed(MouseEvent e) {
@@ -54,13 +54,13 @@ public class AboutGameFrame extends JFrame {
 				 
 			}
 		});
-		//±³¾°ÉèÖÃ
+		//èƒŒæ™¯è®¾ç½®
 		JLabel backgroundLabel = new JLabel(BackgroundIcon);
 		this.getLayeredPane().add(backgroundLabel, new Integer(Integer.MIN_VALUE));
 		backgroundLabel.setBounds(0, 0, BackgroundIcon.getIconWidth(), BackgroundIcon.getIconHeight());
 		((JPanel)contain).setOpaque(false);
 	
-		//ÍË³ö°´Å¥
+		//é€€å‡ºæŒ‰é’®
 		JButton SubmitBT = new JButton("");
 		SubmitBT.setSize(220, 46);
 		SubmitBT.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -79,14 +79,14 @@ public class AboutGameFrame extends JFrame {
 		});
 		 
 		this.setLocationRelativeTo(null); 
-		//×é¼şÌí¼Ó
+		//ç»„ä»¶æ·»åŠ 
 		this.setLayout(null);
 		contain.add(SubmitBT);
 	 
-		//ÉèÖÃÎŞ±êÌâÀ¸
+		//è®¾ç½®æ— æ ‡é¢˜æ 
 		this.dispose();
 		this.setUndecorated(true);
-		//¿É¼û
+		//å¯è§
 		this.setVisible(true);
 		
 	}

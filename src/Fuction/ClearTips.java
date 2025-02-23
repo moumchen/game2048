@@ -5,7 +5,7 @@ import java.util.TimerTask;
 import javax.swing.JLabel;
 
 /**
- * 清楚Tip栏的消息
+ * 娓呮Tip鏍忕殑娑堟伅
  * @author Chenyanqian
  *
  */

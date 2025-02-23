@@ -6,7 +6,7 @@ import java.awt.Font;
 import javax.swing.JLabel;
 
 /**
- * Bean:ÅÅÃûÓÃ£¬ÓÃÓÚÊä³öÇ°Ê®Î»ĞÅÏ¢µÄJLabel¹²ÓĞÊôĞÔ¡£ 
+ * Bean:æ’åç”¨ï¼Œç”¨äºè¾“å‡ºå‰åä½ä¿¡æ¯çš„JLabelå…±æœ‰å±æ€§ã€‚ 
  * @author Chenyanqian
  */
 public class Info extends JLabel {
@@ -14,7 +14,7 @@ public class Info extends JLabel {
 	public Info(int x, int y) {
 		this.setOpaque(false);
 		this.setBounds(x, y, 520, 15);
-		this.setFont(new Font("ËÎÌå", Font.BOLD, 20));
+		this.setFont(new Font("å®‹ä½“", Font.BOLD, 20));
 		this.setForeground(Color.WHITE);
 		this.setBackground(Color.BLACK);
 	}

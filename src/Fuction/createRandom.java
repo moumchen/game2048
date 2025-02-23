@@ -3,7 +3,7 @@ package Fuction;
 import Beans.Block;
 
 /**
- * ´´½¨Ëæ»úÊı
+ * åˆ›å»ºéšæœºæ•°
  * 
  *
  */
@@ -24,7 +24,7 @@ public class createRandom {
 	public void creat() {
 		int x;
 		int y;
-		 //Ëæ»ú¸³ÖµÊ×Êı×Ö¿é
+		 //éšæœºèµ‹å€¼é¦–æ•°å­—å—
 		 do{
 			 x = (int) Math.round(Math.random()*10);
 			 y = (int) Math.round(Math.random()*10);

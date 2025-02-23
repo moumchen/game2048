@@ -7,7 +7,7 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
 /**
- * Bean:¾ØÕó»æÖÆÓÃ£¬ÓÃÓÚÊä³öÓÎÏ··½¿é¾ØÕóµÄ¹²ÓĞÊôĞÔ¡£ 
+ * Bean:çŸ©é˜µç»˜åˆ¶ç”¨ï¼Œç”¨äºè¾“å‡ºæ¸¸æˆæ–¹å—çŸ©é˜µçš„å…±æœ‰å±æ€§ã€‚ 
  * @author Chenyanqian
  */
 public class Block extends JLabel{
@@ -15,7 +15,7 @@ public class Block extends JLabel{
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * ³õÊ¼»¯¾ØÕó
+	 * åˆå§‹åŒ–çŸ©é˜µ
 	 * @param x
 	 * @param y
 	 * @param Diff

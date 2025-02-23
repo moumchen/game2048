@@ -19,7 +19,7 @@ import DB.DBop;
 import GUI.ErrorFrame;
 
 /**
- * ¶ÁÈ¡ÓÎÏ·ºÍ±£´æÓÎÏ·
+ * è¯»å–æ¸¸æˆå’Œä¿å­˜æ¸¸æˆ
  */
 public class SaveAndRead{
 	
@@ -108,7 +108,7 @@ public class SaveAndRead{
 		return 1;
 	}
 	/**
-	 * ¶ÁÈ¡Õû¸ö³ÌĞòµÄ×î¸ß·ÖÊı
+	 * è¯»å–æ•´ä¸ªç¨‹åºçš„æœ€é«˜åˆ†æ•°
 	 * @return
 	 */
 	public int readMaxScore() {
@@ -122,7 +122,7 @@ public class SaveAndRead{
 			Properties p = new Properties();
 			p.load(fis);
 			if(p.getProperty("MaxScore")!=null) {
-				System.out.println("¹ı³Ì»¯£º ¶Á  " + MaxScoreFile + " ÏêÏ¸£º ×î¸ß·Ö¶ÁÈ¡³É¹¦");
+				System.out.println("è¿‡ç¨‹åŒ–ï¼š è¯»  " + MaxScoreFile + " è¯¦ç»†ï¼š æœ€é«˜åˆ†è¯»å–æˆåŠŸ");
 				return Integer.valueOf(p.getProperty("MaxScore")).intValue();
 			}else {
 				SaveAndRead.this.writeMaxScore("0");
@@ -136,7 +136,7 @@ public class SaveAndRead{
 	}
 	
 	/**
-	 * ½«×î¸ß·ÖÊıĞ´ÈëÅäÖÃÎÄ¼ş
+	 * å°†æœ€é«˜åˆ†æ•°å†™å…¥é…ç½®æ–‡ä»¶
 	 * @return
 	 */
 	public void writeMaxScore(String score) {
@@ -151,7 +151,7 @@ public class SaveAndRead{
 			p.load(fis);
 			p.setProperty("MaxScore", score);
 			p.store(fos, "CUIT2048 - MAXSCORE PROPERTIES");
-			System.out.println("¹ı³Ì»¯£º Ğ´  " + MaxScoreFile + " ÏêÏ¸£º ×î¸ß·ÖĞ´Èë³É¹¦");
+			System.out.println("è¿‡ç¨‹åŒ–ï¼š å†™  " + MaxScoreFile + " è¯¦ç»†ï¼š æœ€é«˜åˆ†å†™å…¥æˆåŠŸ");
 		}catch(Exception e) {
 			new ErrorFrame();
 		}
@@ -193,7 +193,7 @@ public class SaveAndRead{
 			st.executeUpdate(); 
 			return 1;
 		} catch (Exception e) {
-			 JOptionPane.showMessageDialog(new JPanel(), "ÉÏ´«ĞÅÏ¢Ê§°Ü£¬Çë¼ì²éÍøÂçÁ¬½ÓÇé¿ö", "´íÎó",JOptionPane.WARNING_MESSAGE);  
+			 JOptionPane.showMessageDialog(new JPanel(), "ä¸Šä¼ ä¿¡æ¯å¤±è´¥ï¼Œè¯·æ£€æŸ¥ç½‘ç»œè¿æ¥æƒ…å†µ", "é”™è¯¯",JOptionPane.WARNING_MESSAGE);  
 		} 
 		
 		return -1;

@@ -9,7 +9,7 @@ import java.sql.Statement;
 import GUI.ErrorFrame;
 
 /**
- * ÅÅÃûÓÃ£¬ÓÃÓÚ»ñÈ¡ºÍÉÏÔØÊı¾İĞÅÏ¢
+ * æ’åç”¨ï¼Œç”¨äºè·å–å’Œä¸Šè½½æ•°æ®ä¿¡æ¯
  * @author ChenYanQian
  *
  */
@@ -21,7 +21,7 @@ public class DBop {
 	static String pass = "cyq967240";
 	
 	/**
-	 * »ñÈ¡Á¬½Ó
+	 * è·å–è¿æ¥
 	 * @return Connection
 	 */
 	public static Connection getConnect() {
@@ -37,7 +37,7 @@ public class DBop {
 	}
 	
 	/**
-	 * ¹Ø±Õ×ÊÔ´
+	 * å…³é—­èµ„æº
 	 * @param con
 	 * @param st
 	 * @param rs

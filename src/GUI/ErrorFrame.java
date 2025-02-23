@@ -6,7 +6,7 @@ import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 /**
- * 错误窗口
+ * 閿欒绐楀彛
  * @author Chenyanqian
  */
 public class ErrorFrame extends JFrame {
@@ -14,10 +14,10 @@ public class ErrorFrame extends JFrame {
 	 
 	private static final long serialVersionUID = 1L;
 	public ErrorFrame() {
-		this.setTitle("程序发生错误");
+		this.setTitle("绋嬪簭鍙戠敓閿欒");
 		this.setSize(500, 100);
 		JLabel bel = new JLabel("");
-		bel.setText("不好意思，程序发生意外错误，我们将会收集错误信息解决，请关闭本窗口结束程序");
+		bel.setText("涓嶅ソ鎰忔�濓紝绋嬪簭鍙戠敓鎰忓閿欒锛屾垜浠皢浼氭敹闆嗛敊璇俊鎭В鍐筹紝璇峰叧闂湰绐楀彛缁撴潫绋嬪簭");
 		bel.setBounds(0, 0, this.getWidth(), this.getHeight());
 		this.getContentPane().add(bel);
 		this.setLayout(null);

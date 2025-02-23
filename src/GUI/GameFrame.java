@@ -32,7 +32,7 @@ import Fuction.TipsContent;
 import Fuction.createRandom;
 
 /**
- * Ö÷ÓÎÏ·½çÃæ
+ * ä¸»æ¸¸æˆç•Œé¢
  * @author Chenyanqian
  *
  */
@@ -46,7 +46,7 @@ public class GameFrame extends JFrame {
 	int Step =0;
 	Block[][] bs;
 	int Diff = 4;
-	int Xtemp=5;//¾ØÕó³õÊ¼»¯Ê±Ê¹ÓÃµÄ¼ä¸ô±äÁ¿
+	int Xtemp=5;//çŸ©é˜µåˆå§‹åŒ–æ—¶ä½¿ç”¨çš„é—´éš”å˜é‡
     int Ytemp=5;
     createRandom c;
     GameListen listen;
@@ -62,16 +62,16 @@ public class GameFrame extends JFrame {
     
 	public GameFrame(MainFrame main, Difficult difficult) {	
 		
-		//Êı¾İ³õÊ¼»¯
+		//æ•°æ®åˆå§‹åŒ–
 		difficult.setFlag(1);
 		this.Diff = difficult.getDiff();
 		sr =  new SaveAndRead();
 		MaxScore = sr.readMaxScore();
 		tipscontent = new TipsContent();
 		cleartips = new ClearTips();
-		Timer timer = new Timer();//¶¨Ê±Ö´ĞĞtipsÄÚÈİ¸ü¸ÄµÄ³ÌĞò
+		Timer timer = new Timer();//å®šæ—¶æ‰§è¡Œtipså†…å®¹æ›´æ”¹çš„ç¨‹åº
 		
-		//Í¼Ïñ
+		//å›¾åƒ
 		ImageIcon background = new ImageIcon("Images//BackgroundIMG//GameFrameBG.png");
 		ImageIcon topbackground = new ImageIcon("Images//BackgroundIMG//TopBack.png");
 		ImageIcon back = new ImageIcon("Images//Button//back.png");
@@ -93,23 +93,23 @@ public class GameFrame extends JFrame {
 		ImageIcon up = new ImageIcon("Images//Button//Upload.png");
 		ImageIcon unsrollback = new ImageIcon("Images//Button//unsrollback.png");
 		
-		//Container»ñÈ¡
+		//Containerè·å–
 		Container contain = this.getContentPane();
 		 
 		this.setSize(1500, 700);
 		
 		this.setLocationRelativeTo(null); 
 
-		 //Frame±³¾°ÉèÖÃ
+		 //FrameèƒŒæ™¯è®¾ç½®
 		 JLabel backgroundLabel = new JLabel(background);
 		 this.getLayeredPane().add(backgroundLabel, new Integer(Integer.MIN_VALUE));
 		 backgroundLabel.setBounds(0, 0, background.getIconWidth(), background.getIconHeight());
 		 ((JPanel)contain).setOpaque(false);
-		 //ÉèÖÃÍÏ×§¹¦ÄÜ
+		 //è®¾ç½®æ‹–æ‹½åŠŸèƒ½
 		 this.addMouseListener(new MouseAdapter() {
 			  
 			   public void mousePressed(MouseEvent e) {
-			     xOld = e.getX();//¼ÇÂ¼Êó±ê°´ÏÂÊ±µÄ×ø±ê
+			     xOld = e.getX();//è®°å½•é¼ æ ‡æŒ‰ä¸‹æ—¶çš„åæ ‡
 			     yOld = e.getY();
 			    }
 		 });
@@ -121,18 +121,18 @@ public class GameFrame extends JFrame {
 			   int yOnScreen = e.getYOnScreen();
 			   int xx = xOnScreen - xOld;
 			   int yy = yOnScreen - yOld;
-			   GameFrame.this.setLocation(xx, yy);//ÉèÖÃÍÏ×§ºó£¬´°¿ÚµÄÎ»ÖÃ
+			   GameFrame.this.setLocation(xx, yy);//è®¾ç½®æ‹–æ‹½åï¼Œçª—å£çš„ä½ç½®
 			   }
 		 });
 	     
-	     //ÓÎÏ·Ö÷Ãæ°å
+	     //æ¸¸æˆä¸»é¢æ¿
 	     JLabel outbround = new JLabel();
 	     outbround.setBounds(this.getWidth()/2-275, this.getHeight()-550, 560, 560);
 	     outbround.setBackground(Color.CYAN);
 		 outbround.setOpaque(true);
 	     this.add(outbround);
 
-	     //Ìí¼ÓÓÎÏ·Block,²¢³õÊ¼»¯
+	     //æ·»åŠ æ¸¸æˆBlock,å¹¶åˆå§‹åŒ–
 	     bs = new Block[Diff][Diff];
 	     for(int i=0; i<Diff; i++) {
 			 for(int j=0; j<Diff; j++) {
@@ -141,21 +141,21 @@ public class GameFrame extends JFrame {
 				 bs[i][j].setOpaque(true);
 				 outbround.add(bs[i][j]);
 				 if(Diff==4)
-					 Xtemp += 140; //¼ä¸ô10£»
+					 Xtemp += 140; //é—´éš”10ï¼›
 				 if(Diff==5)
 					 Xtemp += 112;
 			 }
 			if(Diff==4) {
-				Ytemp +=137;//¼ä¸ô10
+				Ytemp +=137;//é—´éš”10
 				Xtemp = 5;
 			 }
 			if(Diff==5) {
-				 Ytemp +=110;//¼ä¸ô10
+				 Ytemp +=110;//é—´éš”10
 				 Xtemp = 5;
 			}
 	     }	 
 	     
-	     //ÖØĞÂ¿ªÊ¼ÓÎÏ·°´Å¥
+	     //é‡æ–°å¼€å§‹æ¸¸æˆæŒ‰é’®
 	     JButton restartBT = new JButton();
 	     restartBT.setBounds(100, 200, 220, 46);
 	     restartBT.setPreferredSize(new Dimension(80,20));
@@ -164,7 +164,7 @@ public class GameFrame extends JFrame {
 	     restartBT.setPressedIcon(restart2);
 	     restartBT.setRolloverIcon(restart1);
 	     
-	     //¶ÁÈ¡ÓÎÏ·°´Å¥
+	     //è¯»å–æ¸¸æˆæŒ‰é’®
 	     JButton readBT = new JButton();
 	     readBT.setBounds(100, 280, 220, 46);
 	     readBT.setPreferredSize(new Dimension(80,20));
@@ -173,7 +173,7 @@ public class GameFrame extends JFrame {
 	     readBT.setPressedIcon(read2);
 	     readBT.setRolloverIcon(read1);
 	     
-	     //±£´æÓÎÏ·°´Å¥
+	     //ä¿å­˜æ¸¸æˆæŒ‰é’®
 	     JButton saveBT = new JButton();
 	     saveBT.setBounds(100, 360, 220, 46);
 	     saveBT.setPreferredSize(new Dimension(80,20));
@@ -182,7 +182,7 @@ public class GameFrame extends JFrame {
 	     saveBT.setPressedIcon(save2);
 	     saveBT.setRolloverIcon(save1);
 	    
-	     //ÓÎÏ··µ»ØÖ÷½çÃæ°´Å¥
+	     //æ¸¸æˆè¿”å›ä¸»ç•Œé¢æŒ‰é’®
 	     JButton backBT = new JButton();
 	     backBT.setBounds(100, 440, 220, 46);
 	     backBT.setPreferredSize(new Dimension(80,20));
@@ -201,7 +201,7 @@ public class GameFrame extends JFrame {
 	    	 
 	    	 
 		});
-	     //ÓÎÏ·ÍË³ö°´Å¥
+	     //æ¸¸æˆé€€å‡ºæŒ‰é’®
 	     JButton exitBT = new JButton();
 	     exitBT.setBounds(100, 520, 220, 46);
 	     exitBT.setPreferredSize(new Dimension(80,20));
@@ -210,64 +210,64 @@ public class GameFrame extends JFrame {
 	     exitBT.setPressedIcon(exit2);
 	     exitBT.setRolloverIcon(exit1);
 	    
-	     //·ÖÊıÃæ°å
+	     //åˆ†æ•°é¢æ¿
 	     JLabel score = new JLabel();
-	     score.setFont(new Font("ºÚÌå", Font.BOLD, 20));
+	     score.setFont(new Font("é»‘ä½“", Font.BOLD, 20));
 	     score.setBounds(1200, 200, 200, 50);
-	     score.setText("µÃ·Ö:0");
+	     score.setText("å¾—åˆ†:0");
 	     score.setBackground(Color.yellow);
 	     score.setOpaque(true);
 	     this.add(score);
 	     
-	     //×î¸ß·Ö
+	     //æœ€é«˜åˆ†
 	     JLabel maxscore = new JLabel();
-	     maxscore.setFont(new Font("ºÚÌå", Font.BOLD, 20));
+	     maxscore.setFont(new Font("é»‘ä½“", Font.BOLD, 20));
 	     maxscore.setBounds(1200, 260, 200, 50);
-	     maxscore.setText("×î¸ß·Ö:"+MaxScore);
+	     maxscore.setText("æœ€é«˜åˆ†:"+MaxScore);
 	     maxscore.setBackground(Color.yellow);
 	     maxscore.setOpaque(true);
 	     this.add(maxscore);
 	     
-	     //ÒÑ×ß²½Êı
+	     //å·²èµ°æ­¥æ•°
 	     JLabel stepsum = new JLabel();
-	     stepsum.setFont(new Font("ºÚÌå", Font.BOLD, 20));
+	     stepsum.setFont(new Font("é»‘ä½“", Font.BOLD, 20));
 	     stepsum.setBounds(1200, 320, 200, 50);
-	     stepsum.setText("ÒÑ×ß²½Êı:0");
+	     stepsum.setText("å·²èµ°æ­¥æ•°:0");
 	     stepsum.setBackground(Color.yellow);
 	     stepsum.setOpaque(true);
 	     this.add(stepsum);
 	     
-	     //Á¬»÷
+	     //è¿å‡»
 	     JLabel always = new JLabel();
-	     always.setFont(new Font("ºÚÌå", Font.BOLD, 20));
+	     always.setFont(new Font("é»‘ä½“", Font.BOLD, 20));
 	     always.setBounds(1200, 380, 200, 50);
-	     always.setText("Á¬»÷:0");
+	     always.setText("è¿å‡»:0");
 	     always.setBackground(Color.yellow);
 	     always.setOpaque(true);
 	     this.add(always);
 	     
 	     //tips
 	     JLabel tip = new JLabel();
-	     tip.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 15));
-	     tip.setForeground(Color.WHITE);//Ê±¿Ì×¢Òâ»î¶¯½Ï´óÊı£¨32ÒÔÉÏ£©ÅÔ±ßÒªÓĞÏà½üµÄÊı¡£
+	     tip.setFont(new Font("å¾®è½¯é›…é»‘", Font.BOLD, 15));
+	     tip.setForeground(Color.WHITE);//æ—¶åˆ»æ³¨æ„æ´»åŠ¨è¾ƒå¤§æ•°ï¼ˆ32ä»¥ä¸Šï¼‰æ—è¾¹è¦æœ‰ç›¸è¿‘çš„æ•°ã€‚
 	     tip.setBounds(470,90,750,100);
 	     tip.setOpaque(false);
 	     this.add(tip);
 	     
-	     //»ØÍË°´Å¥
+	     //å›é€€æŒ‰é’®
 	     JButton srollBT = new JButton();
 	     srollBT.setBounds(1200, 460, 220, 46);
 	     srollBT.setPreferredSize(new Dimension(80,20));
 	     srollBT.setCursor(new Cursor(Cursor.HAND_CURSOR));
 	     srollBT.setIcon(unsrollback);
-	     srollBT.setToolTipText("»ØÍË¹¦ÄÜÔİÊ±ÎŞ·¨Ê¹ÓÃ£¬ÔÚÒÆ¶¯ºó¿ªÆô");
+	     srollBT.setToolTipText("å›é€€åŠŸèƒ½æš‚æ—¶æ— æ³•ä½¿ç”¨ï¼Œåœ¨ç§»åŠ¨åå¼€å¯");
 	     this.add(srollBT);
 	     
 	     now = Calendar.getInstance();
 	     
-	     //ÅÅÃû¹¦ÄÜÔÚ2017Äê12ÔÂ9ÈÕÖ®ºó½áÊø
+	     //æ’ååŠŸèƒ½åœ¨2017å¹´12æœˆ9æ—¥ä¹‹åç»“æŸ
 	    // if(now.get(Calendar.YEAR)==2017 && now.get(Calendar.MONTH)+1==12 && now.get(Calendar.DAY_OF_MONTH)<=9) {
-		     //È«ÇòÅÅÃû
+		     //å…¨çƒæ’å
 		     JButton TopBT = new JButton();
 		     TopBT.setBounds(1200, 520, 220, 46);
 		     TopBT.setPreferredSize(new Dimension(80,20));
@@ -275,7 +275,7 @@ public class GameFrame extends JFrame {
 		     TopBT.setIcon(top);
 		     this.add(TopBT);
 		     
-		     //ÉÏ´«
+		     //ä¸Šä¼ 
 		     JButton UpBT = new JButton();
 		     UpBT.setBounds(1200, 570, 220, 46);
 		     UpBT.setPreferredSize(new Dimension(80,20));
@@ -302,7 +302,7 @@ public class GameFrame extends JFrame {
 							topframe.setUndecorated(true);
 							topframe.setVisible(true);
 							
-							JButton close = new JButton("¹Ø±Õ");
+							JButton close = new JButton("å…³é—­");
 							close.setBackground(Color.WHITE);
 							close.setBounds(620, 440,60, 30);
 							close.addMouseListener(new MouseAdapter() {
@@ -317,9 +317,9 @@ public class GameFrame extends JFrame {
 							JLabel infos = new JLabel();
 							infos.setOpaque(false);
 							infos.setBounds(88, 120, 520, 40);
-							infos.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 40));
+							infos.setFont(new Font("å¾®è½¯é›…é»‘", Font.BOLD, 40));
 							infos.setForeground(Color.WHITE);
-						 	infos.setText("ĞÕÃû ·ÖÊı µØÖ· Ê±¼ä");
+						 	infos.setText("å§“å åˆ†æ•° åœ°å€ æ—¶é—´");
 							topframe.add(infos);
 							int i=0;
 							int y=170;
@@ -355,12 +355,12 @@ public class GameFrame extends JFrame {
 						 			 info[k].setText(top2[k]);
 						 			 lenth--;
 						 		 }else {
-						 			 info[k].setText("ĞéÎ»ÒÔ´ı");
+						 			 info[k].setText("è™šä½ä»¥å¾…");
 						 		 }
 						 		 k++;
 						 	} 
 					 	}else {
-					 		info[1].setText("Çë¼ì²éÄúµÄÍøÂçÁ¬½Ó£¬ÎŞ·¨»ñÈ¡µ½ÅÅÃûĞÅÏ¢");
+					 		info[1].setText("è¯·æ£€æŸ¥æ‚¨çš„ç½‘ç»œè¿æ¥ï¼Œæ— æ³•è·å–åˆ°æ’åä¿¡æ¯");
 					 	}
 					 	StringBuffer sb =null;
 					 	if(lenth!=0) {
@@ -371,9 +371,9 @@ public class GameFrame extends JFrame {
 							}
 					 	}
 					 	if(sb!=null) {
-					 		more.setText("¸ü¶à·ÖÊıÅÅÃû:\n"+sb.toString());
+					 		more.setText("æ›´å¤šåˆ†æ•°æ’å:\n"+sb.toString());
 					 	}else {
-					 		more.setText("ÔİÎŞ¸ü¶àÅÅÃû");
+					 		more.setText("æš‚æ— æ›´å¤šæ’å");
 					 	}
 	
 					}
@@ -384,18 +384,18 @@ public class GameFrame extends JFrame {
 	
 					public void mouseClicked(MouseEvent e) {
 						now = Calendar.getInstance();  
-						String name = JOptionPane.showInputDialog(null, "ÊäÈëÄúµÄÃû×Ö£º");
-						String add = JOptionPane.showInputDialog(null, "ÊäÈëÄúµÄ¹ú¼®»ò³ÇÊĞµØÖ·£º");
+						String name = JOptionPane.showInputDialog(null, "è¾“å…¥æ‚¨çš„åå­—ï¼š");
+						String add = JOptionPane.showInputDialog(null, "è¾“å…¥æ‚¨çš„å›½ç±æˆ–åŸå¸‚åœ°å€ï¼š");
 					    int year = now.get(Calendar.YEAR);  
 				        int month = now.get(Calendar.MONTH) + 1; 
 				        int day = now.get(Calendar.DAY_OF_MONTH);
-				        String time = "" + year +"Äê" + month + "ÔÂ" + day+"ÈÕ";
+				        String time = "" + year +"å¹´" + month + "æœˆ" + day+"æ—¥";
 				        String score = Integer.valueOf(listen.getScore()).toString();
 				        if(name!=null) {
-					        System.out.println("¹ı³Ì»¯£ºÔÆÊı¾İÉÏ´«£º"+name+ score+ add+ time);
+					        System.out.println("è¿‡ç¨‹åŒ–ï¼šäº‘æ•°æ®ä¸Šä¼ ï¼š"+name+ score+ add+ time);
 					        int judge = SaveAndRead.storeTopScore(name, score, add, time);
 					        if(judge==1) {
-					        	JOptionPane.showMessageDialog(new JPanel(), "ÉÏ´«³É¹¦", "²Ù×÷ÌáÊ¾",JOptionPane.WARNING_MESSAGE);  
+					        	JOptionPane.showMessageDialog(new JPanel(), "ä¸Šä¼ æˆåŠŸ", "æ“ä½œæç¤º",JOptionPane.WARNING_MESSAGE);  
 					        }
 				        }
 					}
@@ -425,8 +425,8 @@ public class GameFrame extends JFrame {
 					 c.creat();
 					 Step = 0;
 					 Score = 0;
-					 score.setText("µÃ·Ö:0");
-					 stepsum.setText("ÒÑ×ß²½Êı:0");
+					 score.setText("å¾—åˆ†:0");
+					 stepsum.setText("å·²èµ°æ­¥æ•°:0");
 					 srollBT.setIcon(unsrollback);
 					 listen.reset(bs, Diff, c, Score, MaxScore, Step, score, maxscore, stepsum);
 					 DrewColor.drewColor(bs, Diff);
@@ -440,15 +440,15 @@ public class GameFrame extends JFrame {
 			 
 				public void mouseClicked(MouseEvent e) {
 					 try {
-						String name = JOptionPane.showInputDialog(null, "ÊäÈë±£´æµÄÎÄ¼şÃû");
+						String name = JOptionPane.showInputDialog(null, "è¾“å…¥ä¿å­˜çš„æ–‡ä»¶å");
 						if(name!=null && !name.equals("")) {
 							int result = sr.write(name, bs, listen.getStep(), listen.getScore(), Diff);
 							if(result==1) {
-								JOptionPane.showMessageDialog(new JPanel(), "±£´æ³É¹¦", "²Ù×÷ÌáÊ¾",JOptionPane.WARNING_MESSAGE);  
+								JOptionPane.showMessageDialog(new JPanel(), "ä¿å­˜æˆåŠŸ", "æ“ä½œæç¤º",JOptionPane.WARNING_MESSAGE);  
 							}
 						}
 					} catch (IOException e1) {
-						JOptionPane.showMessageDialog(new JPanel(), "´æ´¢³ö´í£¬ÇëÖØÊÔ¡£", "²Ù×÷ÌáÊ¾",JOptionPane.WARNING_MESSAGE);  
+						JOptionPane.showMessageDialog(new JPanel(), "å­˜å‚¨å‡ºé”™ï¼Œè¯·é‡è¯•ã€‚", "æ“ä½œæç¤º",JOptionPane.WARNING_MESSAGE);  
 					}
 					
 					
@@ -462,8 +462,8 @@ public class GameFrame extends JFrame {
 	    		 try {
 						int[][] TempBS;
 						String names = sr.readFileName();
-						JOptionPane.showMessageDialog(new JPanel(), names, "ÒÑ¾­´æÔÚµÄÓÎÏ·½ø¶ÈÎÄ¼ş",JOptionPane.WARNING_MESSAGE);  
-						String name = JOptionPane.showInputDialog(null, "ÊäÈëÄúÒª¶ÁÈ¡µÄ½ø¶ÈÃû£º");
+						JOptionPane.showMessageDialog(new JPanel(), names, "å·²ç»å­˜åœ¨çš„æ¸¸æˆè¿›åº¦æ–‡ä»¶",JOptionPane.WARNING_MESSAGE);  
+						String name = JOptionPane.showInputDialog(null, "è¾“å…¥æ‚¨è¦è¯»å–çš„è¿›åº¦åï¼š");
 						if(name!=null) {
 							sr.read(name);
 							TempBS = sr.getBs();
@@ -485,23 +485,23 @@ public class GameFrame extends JFrame {
 										 bs[i][j].setOpaque(true);
 										 outbround.add(bs[i][j]);
 										 if(Diff==4)
-											 Xtemp += 140; //¼ä¸ô10£»
+											 Xtemp += 140; //é—´éš”10ï¼›
 										 if(Diff==5)
 											 Xtemp += 112;
 									 }
 									if(Diff==4) {
-										Ytemp +=137;//¼ä¸ô10
+										Ytemp +=137;//é—´éš”10
 										Xtemp = 5;
 									 }
 									if(Diff==5) {
-										 Ytemp +=110;//¼ä¸ô10
+										 Ytemp +=110;//é—´éš”10
 										 Xtemp = 5;
 									}
 								 outbround.setVisible(true);
 								 }
 							}
-							score.setText("µÃ·Ö:"+Integer.valueOf(Score).toString());
-							stepsum.setText("ÒÑ×ß²½Êı:"+Integer.valueOf(Step).toString());
+							score.setText("å¾—åˆ†:"+Integer.valueOf(Score).toString());
+							stepsum.setText("å·²èµ°æ­¥æ•°:"+Integer.valueOf(Step).toString());
 							for(int i=0; i<Diff; i++) {
 								for(int j=0; j<Diff; j++) {
 									if(TempBS[i][j]==0) {
@@ -516,7 +516,7 @@ public class GameFrame extends JFrame {
 							listen.reset(bs, Diff, c, Score, MaxScore, Step, score, maxscore, stepsum);
 						}
 					} catch (IOException e1) {
-						JOptionPane.showMessageDialog(new JPanel(), "ÎÄ¼ş²»´æÔÚ£¬ÊäÈë´íÎó»ò·¢ÉúÒâÍâ", "²Ù×÷ÌáÊ¾",JOptionPane.WARNING_MESSAGE);  
+						JOptionPane.showMessageDialog(new JPanel(), "æ–‡ä»¶ä¸å­˜åœ¨ï¼Œè¾“å…¥é”™è¯¯æˆ–å‘ç”Ÿæ„å¤–", "æ“ä½œæç¤º",JOptionPane.WARNING_MESSAGE);  
 					}
 					
 	    	 }
@@ -537,9 +537,9 @@ public class GameFrame extends JFrame {
 		     cleartips.setTip(tip);
 		     timer.schedule(tipscontent, 3*1000, 120*1000);
 		     timer.schedule(cleartips,18*1000,120*1000);
-		     tip.setText("±¾´¦»áÏÔÊ¾Ò»Ğ©Ğ¡ÌáÊ¾£¬Èç¹ûÄúÏë¹Ø±ÕËü£¬ÇëÔÚÉèÖÃÀïÃæÑ¡Ôñ¹Ø±ÕĞ¡ÌáÊ¾¡££¨Ä¿Ç°£º´ò¿ª£©"); 
+		     tip.setText("æœ¬å¤„ä¼šæ˜¾ç¤ºä¸€äº›å°æç¤ºï¼Œå¦‚æœæ‚¨æƒ³å…³é—­å®ƒï¼Œè¯·åœ¨è®¾ç½®é‡Œé¢é€‰æ‹©å…³é—­å°æç¤ºã€‚ï¼ˆç›®å‰ï¼šæ‰“å¼€ï¼‰"); 
 	     }else {
-	    	 tip.setText("±¾´¦»áÏÔÊ¾Ò»Ğ©Ğ¡ÌáÊ¾£¬Èç¹ûÄúÏë´ò¿ªËü£¬ÇëÔÚÉèÖÃÀïÃæÑ¡Ôñ´ò¿ªĞ¡ÌáÊ¾¡££¨Ä¿Ç°£º¹Ø±Õ£©"); 
+	    	 tip.setText("æœ¬å¤„ä¼šæ˜¾ç¤ºä¸€äº›å°æç¤ºï¼Œå¦‚æœæ‚¨æƒ³æ‰“å¼€å®ƒï¼Œè¯·åœ¨è®¾ç½®é‡Œé¢é€‰æ‹©æ‰“å¼€å°æç¤ºã€‚ï¼ˆç›®å‰ï¼šå…³é—­ï¼‰"); 
 	    	 cleartips.setTip(tip);
 	    	 timer.schedule(cleartips,5*1000);
 	     }
@@ -549,7 +549,7 @@ public class GameFrame extends JFrame {
 	     this.add(readBT);
 	     this.add(saveBT);
 	     System.out.println(MaxScore);
-		 //ÓÎÏ·¼àÌıÓëÓÎÏ·½øĞĞ
+		 //æ¸¸æˆç›‘å¬ä¸æ¸¸æˆè¿›è¡Œ
 		 c = new createRandom(bs,Diff);
 		 c.creat();
 		 listen =  new GameListen(bs, Diff, c, Score, MaxScore, Step, score, maxscore, stepsum, sr, always, srollBT);
@@ -563,7 +563,7 @@ public class GameFrame extends JFrame {
 		 
 		 
 		 
-	     //ÉèÖÃÎŞ±êÌâÀ¸
+	     //è®¾ç½®æ— æ ‡é¢˜æ 
 		 this.requestFocus();
 		 this.dispose();
 		 this.setUndecorated(true);

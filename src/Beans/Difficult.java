@@ -1,14 +1,14 @@
 package Beans;
 
 /**
- * ÓÃÓÚ±£´æÍæ¼Ò¼ÇÂ¼µÄÓÎÏ·ÄÑ¶ÈÖµ
+ * ç”¨äºä¿å­˜ç©å®¶è®°å½•çš„æ¸¸æˆéš¾åº¦å€¼
  * @author Chenyanqian
  */
 public class Difficult {
 	
 	int Diff;
-	int flag = 0; //¼ÇÂ¼ÓÎÏ·½øÈëºóÖØĞÂÉèÖÃÓÎÏ·µÄ±êÖ¾
-	int tipflag = 0; //Ä¬ÈÏ¿ª·ÅÎª0£¬Ğ¡ÌáĞÑ
+	int flag = 0; //è®°å½•æ¸¸æˆè¿›å…¥åé‡æ–°è®¾ç½®æ¸¸æˆçš„æ ‡å¿—
+	int tipflag = 0; //é»˜è®¤å¼€æ”¾ä¸º0ï¼Œå°æé†’
 	
 	
 	public int getTipflag() {

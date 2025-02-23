@@ -9,7 +9,7 @@ import java.net.URL;
 import GUI.ErrorFrame;
 
 /**
- * ±³¾°ÒôÀÖ²¥·Å
+ * èƒŒæ™¯éŸ³ä¹æ’­æ”¾
  * @author Chenyanqian
  */
 public class MainFrameBGM extends Applet{

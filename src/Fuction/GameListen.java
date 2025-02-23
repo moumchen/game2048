@@ -14,14 +14,14 @@ import javax.swing.JPanel;
 import Beans.Block;
  
 /**
- * ÓÎÏ·ÊÂ¼ş¼àÌı
+ * æ¸¸æˆäº‹ä»¶ç›‘å¬
  * @author Chenyanqian
  *
  */
 public class GameListen implements KeyListener{
 	int flag = 0;
-	Block[][] bs;//µ±Ç°·½¿é¾ØÕó
-	String[][] bstemp;//ÉÏÒ»´Î·½¿é¾ØÕó
+	Block[][] bs;//å½“å‰æ–¹å—çŸ©é˜µ
+	String[][] bstemp;//ä¸Šä¸€æ¬¡æ–¹å—çŸ©é˜µ
 	int Diff;
 	createRandom c;
 	int Score = 0;
@@ -36,8 +36,8 @@ public class GameListen implements KeyListener{
 	JLabel always;
 	SaveAndRead sr;
 	int AlwaysFlag = 0;
-	int Always=0;//Á¬»÷±êÖ¾Êı
-	int srollFlag = 0; //¿É·ñ»ØÍË±êÖ¾
+	int Always=0;//è¿å‡»æ ‡å¿—æ•°
+	int srollFlag = 0; //å¯å¦å›é€€æ ‡å¿—
 	ImageIcon sroll = new ImageIcon("Images//Button//srollback.png");
 	ImageIcon unsrollback = new ImageIcon("Images//Button//unsrollback.png");
 	
@@ -54,7 +54,7 @@ public class GameListen implements KeyListener{
 		this.sr = sr;
 		this.always = always;
 		this.srollBT = srollBT;
-		//³õÊ¼»¯¼ÇÂ¼Êı¾İ 
+		//åˆå§‹åŒ–è®°å½•æ•°æ® 
 		bstemp = new String[Diff][Diff];
 		for(int i=0;i<Diff;i++) {
 			for(int j=0; j<Diff; j++) {
@@ -77,7 +77,7 @@ public class GameListen implements KeyListener{
 		srollFlag = 0;
 		
 		DrewColor.drewColor(bs, Diff);
-		//³õÊ¼»¯¼ÇÂ¼Êı¾İ 
+		//åˆå§‹åŒ–è®°å½•æ•°æ® 
 		bstemp = new String[Diff][Diff];
 		for(int i=0;i<Diff;i++) {
 			for(int j=0; j<Diff; j++) {
@@ -92,8 +92,8 @@ public class GameListen implements KeyListener{
 		
 		Score = lastScore;
 		Step = lastStep;
-		step.setText("ÒÑ×ß²½Êı:"+Step);
-		score.setText("µÃ·Ö:"+Score);
+		step.setText("å·²èµ°æ­¥æ•°:"+Step);
+		score.setText("å¾—åˆ†:"+Score);
 		for(int i=0; i<Diff; i++) {
 			for(int j=0; j<Diff; j++) {
 				bs[i][j].setText(bstemp[i][j]);
@@ -108,12 +108,12 @@ public class GameListen implements KeyListener{
 		
 		
 	 
-	//ÊÇ·ñ¿ÉÒÔ»ñÈ¡ÉÏÒ»´Î¼ÇÂ¼µÄ±êÖ¾£»
+	//æ˜¯å¦å¯ä»¥è·å–ä¸Šä¸€æ¬¡è®°å½•çš„æ ‡å¿—ï¼›
 	public int getSrollFlag() {
 		return srollFlag;
 	}
 
-	//»ñÈ¡ÉÏÒ»´Î¼ÇÂ¼
+	//è·å–ä¸Šä¸€æ¬¡è®°å½•
 	public String[][] getBstemp() {
 		return bstemp;
 	}
@@ -136,7 +136,7 @@ public class GameListen implements KeyListener{
 		int value;
 		int gamejudge=0;
 		int fulljudge=0;
-		//±¸·İÉÏÒ»´Î¼ÇÂ¼
+		//å¤‡ä»½ä¸Šä¸€æ¬¡è®°å½•
 	    for(int i=0; i<Diff; i++) {
 	    	for(int j=0;j<Diff; j++) {
 	    		bstemp[i][j] = bs[i][j].getText();
@@ -172,12 +172,12 @@ public class GameListen implements KeyListener{
 						 temp = Integer.valueOf(value);
 						 if(value<=128) {
 							 int SCORE = Integer.valueOf((score.getText().split(":"))[1]).intValue() + 5;
-							 score.setText("µÃ·Ö:"+SCORE);
+							 score.setText("å¾—åˆ†:"+SCORE);
 						 }else if(value<1024 && value>128){
 							 int SCORE = Integer.valueOf((score.getText().split(":"))[1]).intValue() + 12;
-							 score.setText("µÃ·Ö:"+SCORE);
+							 score.setText("å¾—åˆ†:"+SCORE);
 						 }else if(value == 1024) {
-							 JOptionPane.showMessageDialog(new JPanel(), "1024·½¿é³öÏÖÀ²£¡ÄúÒÀ¾É¿ÉÒÔ¼ÌĞøÓÎÏ·Ó´~", "ÓÎÏ·Í¨¹ØÌáÊ¾",JOptionPane.WARNING_MESSAGE);  
+							 JOptionPane.showMessageDialog(new JPanel(), "1024æ–¹å—å‡ºç°å•¦ï¼æ‚¨ä¾æ—§å¯ä»¥ç»§ç»­æ¸¸æˆå“Ÿ~", "æ¸¸æˆé€šå…³æç¤º",JOptionPane.WARNING_MESSAGE);  
 						 }
 						 bs[j-1][i].setText(temp.toString());
 						 flag = 1;
@@ -229,12 +229,12 @@ public class GameListen implements KeyListener{
 						temp = Integer.valueOf(value);
 						 if(value<=128) {
 							 int SCORE = Integer.valueOf((score.getText().split(":"))[1]).intValue() + 5;
-							 score.setText("µÃ·Ö:"+SCORE);
+							 score.setText("å¾—åˆ†:"+SCORE);
 						 }else if(value<1024 && value>128){
 							 int SCORE = Integer.valueOf((score.getText().split(":"))[1]).intValue() + 12;
-							 score.setText("µÃ·Ö:"+SCORE);
+							 score.setText("å¾—åˆ†:"+SCORE);
 						 }else if(value == 1024) {
-							 JOptionPane.showMessageDialog(new JPanel(), "1024·½¿é³öÏÖÀ²£¡ÄúÒÀ¾É¿ÉÒÔ¼ÌĞøÓÎÏ·Ó´~", "ÓÎÏ·Í¨¹ØÌáÊ¾",JOptionPane.WARNING_MESSAGE);  
+							 JOptionPane.showMessageDialog(new JPanel(), "1024æ–¹å—å‡ºç°å•¦ï¼æ‚¨ä¾æ—§å¯ä»¥ç»§ç»­æ¸¸æˆå“Ÿ~", "æ¸¸æˆé€šå…³æç¤º",JOptionPane.WARNING_MESSAGE);  
 						 }
 						bs[j+1][i].setText(temp.toString());
 						flag = 1;
@@ -288,12 +288,12 @@ public class GameListen implements KeyListener{
 						 temp = Integer.valueOf(value);
 						 if(value<=128) {
 							 int SCORE = Integer.valueOf((score.getText().split(":"))[1]).intValue() + 5;
-							 score.setText("µÃ·Ö:"+SCORE);
+							 score.setText("å¾—åˆ†:"+SCORE);
 						 }else if(value<1024 && value>128){
 							 int SCORE = Integer.valueOf((score.getText().split(":"))[1]).intValue() + 12;
-							 score.setText("µÃ·Ö:"+SCORE);
+							 score.setText("å¾—åˆ†:"+SCORE);
 						 }else if(value == 1024) {
-							 JOptionPane.showMessageDialog(new JPanel(), "1024·½¿é³öÏÖÀ²£¡ÄúÒÀ¾É¿ÉÒÔ¼ÌĞøÓÎÏ·Ó´~", "ÓÎÏ·Í¨¹ØÌáÊ¾",JOptionPane.WARNING_MESSAGE);  
+							 JOptionPane.showMessageDialog(new JPanel(), "1024æ–¹å—å‡ºç°å•¦ï¼æ‚¨ä¾æ—§å¯ä»¥ç»§ç»­æ¸¸æˆå“Ÿ~", "æ¸¸æˆé€šå…³æç¤º",JOptionPane.WARNING_MESSAGE);  
 						 }
 						 bs[i][j-1].setText(temp.toString());
 						 flag = 1;
@@ -346,41 +346,41 @@ public class GameListen implements KeyListener{
 						 temp = Integer.valueOf(value);
 						 if(value<=128) {
 							 int SCORE = Integer.valueOf((score.getText().split(":"))[1]).intValue() + 5;
-							 score.setText("µÃ·Ö:"+SCORE);
+							 score.setText("å¾—åˆ†:"+SCORE);
 						 }else if(value<=512 && value>128){
 							 int SCORE = Integer.valueOf((score.getText().split(":"))[1]).intValue() + 12;
-							 score.setText("µÃ·Ö:"+SCORE);
+							 score.setText("å¾—åˆ†:"+SCORE);
 						 }else if(value<=700 && value>512){
 							 int SCORE = Integer.valueOf((score.getText().split(":"))[1]).intValue() + 25;
-							 score.setText("µÃ·Ö:"+SCORE);
+							 score.setText("å¾—åˆ†:"+SCORE);
 						 }else if(value<1024 && value>700){
 							 int SCORE = Integer.valueOf((score.getText().split(":"))[1]).intValue() + 45;
-							 score.setText("µÃ·Ö:"+SCORE);
+							 score.setText("å¾—åˆ†:"+SCORE);
 						 }else if(value == 1024) {
 							 int SCORE = Integer.valueOf((score.getText().split(":"))[1]).intValue() + 1024;
-							 score.setText("µÃ·Ö:"+SCORE);
-							 JOptionPane.showMessageDialog(new JPanel(), "1024·½¿é³öÏÖÀ²£¡¼Ó·Ö1024·Ö£¡", "ÓÎÏ·ÌáÊ¾",JOptionPane.WARNING_MESSAGE);  
+							 score.setText("å¾—åˆ†:"+SCORE);
+							 JOptionPane.showMessageDialog(new JPanel(), "1024æ–¹å—å‡ºç°å•¦ï¼åŠ åˆ†1024åˆ†ï¼", "æ¸¸æˆæç¤º",JOptionPane.WARNING_MESSAGE);  
 						 }else if(value<=1500 && value>1024) {
 							 int SCORE = Integer.valueOf((score.getText().split(":"))[1]).intValue() + 50;
-							 score.setText("µÃ·Ö:"+SCORE);
+							 score.setText("å¾—åˆ†:"+SCORE);
 						 }else if(value<=1750 && value>1500) {
 							 int SCORE = Integer.valueOf((score.getText().split(":"))[1]).intValue() + 70;
-							 score.setText("µÃ·Ö:"+SCORE);
+							 score.setText("å¾—åˆ†:"+SCORE);
 						 }else if(value<2048 && value>1750) {
 							 int SCORE = Integer.valueOf((score.getText().split(":"))[1]).intValue() + 100;
-							 score.setText("µÃ·Ö:"+SCORE);
+							 score.setText("å¾—åˆ†:"+SCORE);
 						 }else if(value==2048){
 							 int SCORE = Integer.valueOf((score.getText().split(":"))[1]).intValue() + 2048;
-							 score.setText("µÃ·Ö:"+SCORE);
-							 JOptionPane.showMessageDialog(new JPanel(), "2048·½¿é³öÏÖÀ²£¡ÀíÂÛÓÎÏ·Í¨¹Ø£¬µ«ÄúÈÔÈ»¿ÉÒÔ¼ÌĞøÓÎÏ·£¬¼Ó·Ö1024 * 2 = 2048·Ö£¡", "ÓÎÏ·Í¨¹ØÌáÊ¾",JOptionPane.WARNING_MESSAGE); 	
+							 score.setText("å¾—åˆ†:"+SCORE);
+							 JOptionPane.showMessageDialog(new JPanel(), "2048æ–¹å—å‡ºç°å•¦ï¼ç†è®ºæ¸¸æˆé€šå…³ï¼Œä½†æ‚¨ä»ç„¶å¯ä»¥ç»§ç»­æ¸¸æˆï¼ŒåŠ åˆ†1024 * 2 = 2048åˆ†ï¼", "æ¸¸æˆé€šå…³æç¤º",JOptionPane.WARNING_MESSAGE); 	
 						 }else if(value > 2048 && value<=4096) {
 							 int SCORE = Integer.valueOf((score.getText().split(":"))[1]).intValue() + 4096;
-							 score.setText("µÃ·Ö:"+SCORE);
-							 JOptionPane.showMessageDialog(new JPanel(), "4096·½¿é³öÏÖÀ²£¡ÄúÕóÀ÷º¦£¬¼Ó·Ö2048 * 2 = 4096·Ö£¡", "ÓÎÏ·ÌáÊ¾",JOptionPane.WARNING_MESSAGE); 
+							 score.setText("å¾—åˆ†:"+SCORE);
+							 JOptionPane.showMessageDialog(new JPanel(), "4096æ–¹å—å‡ºç°å•¦ï¼æ‚¨é˜µå‰å®³ï¼ŒåŠ åˆ†2048 * 2 = 4096åˆ†ï¼", "æ¸¸æˆæç¤º",JOptionPane.WARNING_MESSAGE); 
 						 }else if(value >4096) {
 							 int SCORE = Integer.valueOf((score.getText().split(":"))[1]).intValue() + 8192;
-							 score.setText("µÃ·Ö:"+SCORE);
-							 JOptionPane.showMessageDialog(new JPanel(), "ÄãµÄÀ÷º¦³ÌĞò¶¼±»ÏÅ×ÅÁË£¬Ö®ºó²»ÔÙÍÆËÍÌáÊ¾£¬·ÖÊı¼ÌĞøÎªÄú¼ÓÉÏÈ¥£¡", "ÓÎÏ·ÌáÊ¾",JOptionPane.WARNING_MESSAGE); 
+							 score.setText("å¾—åˆ†:"+SCORE);
+							 JOptionPane.showMessageDialog(new JPanel(), "ä½ çš„å‰å®³ç¨‹åºéƒ½è¢«å“ç€äº†ï¼Œä¹‹åä¸å†æ¨é€æç¤ºï¼Œåˆ†æ•°ç»§ç»­ä¸ºæ‚¨åŠ ä¸Šå»ï¼", "æ¸¸æˆæç¤º",JOptionPane.WARNING_MESSAGE); 
 						 }
 						 bs[i][j+1].setText(temp.toString());
 						 flag = 1;
@@ -419,14 +419,14 @@ public class GameListen implements KeyListener{
 		 if(flag == 1){
 			 c.creat();
 			 Step++;
-			 step.setText("ÒÑ×ß²½Êı:"+Integer.valueOf(Step).toString());
+			 step.setText("å·²èµ°æ­¥æ•°:"+Integer.valueOf(Step).toString());
 			 fulljudge = 0;
 			 flag = 0;
-		}else {//Î´ÄÜ³É¹¦½øĞĞÒÆ¶¯
+		}else {//æœªèƒ½æˆåŠŸè¿›è¡Œç§»åŠ¨
 			
-			//Èç¹ûÈ«ÂúÔò½øĞĞÓÎÏ·½áÊøÅĞ¶Ï
+			//å¦‚æœå…¨æ»¡åˆ™è¿›è¡Œæ¸¸æˆç»“æŸåˆ¤æ–­
 			if(fulljudge == 0) {
-			//ÅĞ¶ÏÓÎÏ·ÊÇ·ñÎŞ·¨¼ÌĞø½øĞĞ¶ø½áÊø
+			//åˆ¤æ–­æ¸¸æˆæ˜¯å¦æ— æ³•ç»§ç»­è¿›è¡Œè€Œç»“æŸ
 				for(int i=0; i<Diff-1; i++) {
 					for(int j=0; j<Diff-1; j++) {
 						if(i==0) {
@@ -509,14 +509,14 @@ public class GameListen implements KeyListener{
 					
 				}
 				if(gamejudge > 0) {
-					//ÓÎÏ·ÈÔÈ»¿ÉÒÔ¼ÌĞø
+					//æ¸¸æˆä»ç„¶å¯ä»¥ç»§ç»­
 					gamejudge = 0;
 					fulljudge = 0;
 				}else {
 					if(Score>MaxScore) {
 						sr.writeMaxScore(Integer.valueOf(Score).toString());
 					}
-					JOptionPane.showMessageDialog(new JPanel(), "ÓÎÏ·ÔÚÏÂÒ»´ÎºÏ²¢ºó¼´½«½áÊø£¬»òÕßÒÑ¾­ÎŞ·¨ÔÙ½øĞĞÒÆ¶¯ºÏ²¢ÁËÅ¶\nÈô¼ÌĞøÓÎÏ·¡£ÇëÖØÖÃÓÎÏ· ( ¨‹-¨‹ )", "ÓÎÏ·Ê§°ÜÌáÊ¾",JOptionPane.WARNING_MESSAGE);  
+					JOptionPane.showMessageDialog(new JPanel(), "æ¸¸æˆåœ¨ä¸‹ä¸€æ¬¡åˆå¹¶åå³å°†ç»“æŸï¼Œæˆ–è€…å·²ç»æ— æ³•å†è¿›è¡Œç§»åŠ¨åˆå¹¶äº†å“¦\nè‹¥ç»§ç»­æ¸¸æˆã€‚è¯·é‡ç½®æ¸¸æˆ ( â–¼-â–¼ )", "æ¸¸æˆå¤±è´¥æç¤º",JOptionPane.WARNING_MESSAGE);  
 				}
 			}
 			
@@ -527,36 +527,36 @@ public class GameListen implements KeyListener{
 			 	always.setBackground(Color.BLACK);
 			 	always.setBounds(1100, 380, 370, 50);
 			 	always.setForeground(Color.white);
-			 	always.setFont(new Font("¿¬Ìå", Font.BOLD, 30));
-			 	always.setText("¼Ó·Ö:5!Á¬»÷Êı´ïµ½ÁË"+Always+"!");
+			 	always.setFont(new Font("æ¥·ä½“", Font.BOLD, 30));
+			 	always.setText("åŠ åˆ†:5!è¿å‡»æ•°è¾¾åˆ°äº†"+Always+"!");
 			 	 int SCORE = Integer.valueOf((score.getText().split(":"))[1]).intValue() + 5;
-				 score.setText("µÃ·Ö:"+SCORE);
+				 score.setText("å¾—åˆ†:"+SCORE);
 			 	 
 		 	}else if(Always>=5 && Always<=6) {
 		 		always.setBackground(Color.green);
 			 	always.setForeground(Color.black);
-			 	always.setText("¼Ó·Ö10£¡¾¹È»Á¬»÷"+Always+"´Î!");
+			 	always.setText("åŠ åˆ†10ï¼ç«Ÿç„¶è¿å‡»"+Always+"æ¬¡!");
 			 	 int SCORE = Integer.valueOf((score.getText().split(":"))[1]).intValue() + 10;
-				 score.setText("µÃ·Ö:"+SCORE);
+				 score.setText("å¾—åˆ†:"+SCORE);
 			  
 		 	}else if(Always>=7) {
 		 		always.setBackground(Color.WHITE);
-		 		always.setFont(new Font("¿¬Ìå", Font.BOLD, 30));
+		 		always.setFont(new Font("æ¥·ä½“", Font.BOLD, 30));
 			 	always.setForeground(Color.RED);
-			 	always.setText("¼Ó·Ö15£¡¼ÌĞø£¡Á¬»÷"+Always+"£¡Ìì£¡");
+			 	always.setText("åŠ åˆ†15ï¼ç»§ç»­ï¼è¿å‡»"+Always+"ï¼å¤©ï¼");
 			 	 int SCORE = Integer.valueOf((score.getText().split(":"))[1]).intValue() + 15;
-				 score.setText("µÃ·Ö:"+SCORE);
+				 score.setText("å¾—åˆ†:"+SCORE);
 			  
 		 	}else {
 		 		always.setBounds(1200, 380, 200, 50);
 		 		always.setBackground(Color.YELLOW);
 		 		always.setForeground(Color.BLACK);
-		 		always.setFont(new Font("ºÚÌå", Font.BOLD, 20));
-		 		always.setText("Á¬»÷:"+Always);
+		 		always.setFont(new Font("é»‘ä½“", Font.BOLD, 20));
+		 		always.setText("è¿å‡»:"+Always);
 		 	}
 		 		Score= Integer.valueOf(score.getText().split(":")[1]);
 		 		if(Integer.valueOf(score.getText().split(":")[1]) > MaxScore) {
-		 		maxscore.setText("×î¸ß·Ö:"+(Integer.valueOf(score.getText().split(":")[1])));
+		 		maxscore.setText("æœ€é«˜åˆ†:"+(Integer.valueOf(score.getText().split(":")[1])));
 		 	} 	
 		  
 		 		

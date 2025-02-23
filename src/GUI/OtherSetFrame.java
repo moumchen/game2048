@@ -21,7 +21,7 @@ import Beans.Difficult;
 import Music.MainFrameBGM;
 
 /**
- * ÓÃÓÚ¶ÔÓÎÏ·½øĞĞÉèÖÃµÄUIÃæ°å 
+ * ç”¨äºå¯¹æ¸¸æˆè¿›è¡Œè®¾ç½®çš„UIé¢æ¿ 
  * @author Chenyanqian
  */
 
@@ -41,7 +41,7 @@ public class OtherSetFrame extends JFrame{
 	public OtherSetFrame(MainFrameBGM bgm, Difficult Diff) {
 		
 	
-		//Í¼Æ¬ÓëÍ¼±ê
+		//å›¾ç‰‡ä¸å›¾æ ‡
 		ImageIcon BackgroundIcon = new ImageIcon("Images//BackgroundIMG//GameSetting.png");
 		ImageIcon Submit = new ImageIcon("images//Button//Submit.png");
 		ImageIcon Submit1 = new ImageIcon("images//Button//Submit-1.png");	
@@ -54,15 +54,15 @@ public class OtherSetFrame extends JFrame{
 
 		Container contain = this.getContentPane();
 		this.setSize(632, 709);
-		this.setTitle("ÓÎÏ·ÉèÖÃ");
+		this.setTitle("æ¸¸æˆè®¾ç½®");
 		this.setLocationRelativeTo(null); 
 		this.setLayout(null);
 		
-		//Êó±êÍÏ×§
+		//é¼ æ ‡æ‹–æ‹½
 		 this.addMouseListener(new MouseAdapter() {
 			  
 			   public void mousePressed(MouseEvent e) {
-			     xOld = e.getX();//¼ÇÂ¼Êó±ê°´ÏÂÊ±µÄ×ø±ê
+			     xOld = e.getX();//è®°å½•é¼ æ ‡æŒ‰ä¸‹æ—¶çš„åæ ‡
 			     yOld = e.getY();
 			    }
 		 });
@@ -74,21 +74,21 @@ public class OtherSetFrame extends JFrame{
 			   int yOnScreen = e.getYOnScreen();
 			   int xx = xOnScreen - xOld;
 			   int yy = yOnScreen - yOld;
-			   OtherSetFrame.this.setLocation(xx, yy);//ÉèÖÃÍÏ×§ºó£¬´°¿ÚµÄÎ»ÖÃ
+			   OtherSetFrame.this.setLocation(xx, yy);//è®¾ç½®æ‹–æ‹½åï¼Œçª—å£çš„ä½ç½®
 			   }
 		 });
 		 
-	    //±³¾°ÉèÖÃ
+	    //èƒŒæ™¯è®¾ç½®
 	    JLabel backgroundLabel = new JLabel(BackgroundIcon);
 		this.getLayeredPane().add(backgroundLabel, new Integer(Integer.MIN_VALUE));
 		backgroundLabel.setBounds(0, 0, BackgroundIcon.getIconWidth(), BackgroundIcon.getIconHeight());
 		((JPanel)contain).setOpaque(false);
  
-		//ÓÎÏ·ÄÑ¶ÈÉèÖÃ
+		//æ¸¸æˆéš¾åº¦è®¾ç½®
 		JComboBox<String> DifficultBOX = new JComboBox<String>();
-		DifficultBOX.addItem("4¡Á4·½¸ñ");
-		DifficultBOX.addItem("5¡Á5·½¸ñ");
-		DifficultBOX.setSelectedItem("4¡Á4·½¸ñ");
+		DifficultBOX.addItem("4Ã—4æ–¹æ ¼");
+		DifficultBOX.addItem("5Ã—5æ–¹æ ¼");
+		DifficultBOX.setSelectedItem("4Ã—4æ–¹æ ¼");
 		DifficultBOX.setBackground(new Color(26,188,156));
 		DifficultBOX.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		DifficultBOX.setForeground(Color.white);
@@ -98,7 +98,7 @@ public class OtherSetFrame extends JFrame{
 			 
 			public void actionPerformed(ActionEvent e) {
 				 
-				 //´Ë´¦Ğ¡»Æ±ê£ºÀàĞÍ°²È«ÎÊÌâ£¬¼´±ãÊ¹ÓÃÁËinstanceofÒÀ¾É³öÏÖ£¬´Ë´¦ÄÜ¹»±£Ö¤»ñÈ¡µ½µÄ×ÊÔ´ÊÇJComboBox£¬Òò´ËÎŞÊÓ´ËĞ¡»Æ±êÁË
+				 //æ­¤å¤„å°é»„æ ‡ï¼šç±»å‹å®‰å…¨é—®é¢˜ï¼Œå³ä¾¿ä½¿ç”¨äº†instanceofä¾æ—§å‡ºç°ï¼Œæ­¤å¤„èƒ½å¤Ÿä¿è¯è·å–åˆ°çš„èµ„æºæ˜¯JComboBoxï¼Œå› æ­¤æ— è§†æ­¤å°é»„æ ‡äº†
 				 int index = ((JComboBox<String>)e.getSource()).getSelectedIndex();
 				 int temp = Diff.getDiff();
 				 if(index == 1) Diff.setDiff(5);
@@ -128,11 +128,11 @@ public class OtherSetFrame extends JFrame{
 			
 		});
 		
-		//±³¾°ÒôÀÖ¿ª¹Ø
+		//èƒŒæ™¯éŸ³ä¹å¼€å…³
 		JButton OpenOff = new JButton("");
 		OpenOff.setSize(250, 40);
 		OpenOff.setBackground(new Color(26,188,156));
-		OpenOff.setText("ÒôÀÖ¿ªÆôÖĞ");
+		OpenOff.setText("éŸ³ä¹å¼€å¯ä¸­");
 		OpenOff.setForeground(Color.WHITE);
 		OpenOff.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		OpenOff.setBounds(this.getWidth()/2,  this.getHeight()-450, 250, 40);
@@ -144,7 +144,7 @@ public class OtherSetFrame extends JFrame{
 				 if(OpenOff2ClickCount==1) {
 					bgm.StopBGM();
 					Musicnow =0;
-					OpenOff.setText("ÒôÀÖÒÑ¹Ø±Õ");
+					OpenOff.setText("éŸ³ä¹å·²å…³é—­");
 					}
 				 else {
 					 if(Musicnow==0) Musicnow = 1;
@@ -154,7 +154,7 @@ public class OtherSetFrame extends JFrame{
 					 case 3:bgm.ChangeBGM("Sounds//Cry.wav");break;
 					 }
 					 OpenOff2ClickCount=0; 
-					 OpenOff.setText("ÒôÀÖÒÑ¿ªÆô");
+					 OpenOff.setText("éŸ³ä¹å·²å¼€å¯");
 				 }
 			}
 			
@@ -178,14 +178,14 @@ public class OtherSetFrame extends JFrame{
 			
 		});
 		
-		//±³¾°ÒôÀÖÑ¡Ôñ
+		//èƒŒæ™¯éŸ³ä¹é€‰æ‹©
 		JPanel MusicChoosePanel = new JPanel();
 		MusicChoosePanel.setLayout(null);
 		MusicChoosePanel.setBackground(new Color(26,188,156));
 		MusicChoosePanel.setBounds(this.getWidth()/2, this.getHeight()-400,250,120);
 		MusicChoosePanel.setVisible(false);
 		
-		JButton MusicChooseOne = new JButton("ÒÑÑ¡ÖĞ£º±³¾°ÒôÀÖ 1");
+		JButton MusicChooseOne = new JButton("å·²é€‰ä¸­ï¼šèƒŒæ™¯éŸ³ä¹ 1");
 		MusicChooseOne.setSize(250, 40);
 		MusicChooseOne.setBackground(new Color(0,0,0));
 		MusicChooseOne.setOpaque(false);
@@ -193,7 +193,7 @@ public class OtherSetFrame extends JFrame{
 		MusicChooseOne.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		MusicChooseOne.setForeground(Color.WHITE);
 		
-		JButton MusicChooseTwo = new JButton("±³¾°ÒôÀÖ2");
+		JButton MusicChooseTwo = new JButton("èƒŒæ™¯éŸ³ä¹2");
 		MusicChooseTwo.setSize(250, 120);
 		MusicChooseTwo.setBackground(new Color(0,0,0));
 		MusicChooseTwo.setOpaque(false);
@@ -201,7 +201,7 @@ public class OtherSetFrame extends JFrame{
 		MusicChooseTwo.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		MusicChooseTwo.setForeground(Color.WHITE);
 		
-		JButton MusicChooseThree = new JButton("±³¾°ÒôÀÖ 3");
+		JButton MusicChooseThree = new JButton("èƒŒæ™¯éŸ³ä¹ 3");
 		MusicChooseThree.setSize(250, 120);
 		MusicChooseThree.setBackground(new Color(0,0,0));
 		MusicChooseThree.setOpaque(false);
@@ -219,7 +219,7 @@ public class OtherSetFrame extends JFrame{
 		MusicChooseBT.setIcon(MusicChoose);
 		MusicChooseBT.setBounds(this.getWidth()/2-230, this.getHeight()-400, 220, 40);
 		
-		closeTipsBT = new JButton("¹Ø±ÕĞ¡ÌáÊ¾");
+		closeTipsBT = new JButton("å…³é—­å°æç¤º");
 		closeTipsBT.setSize(220, 40);
 		closeTipsBT.setBounds(this.getWidth()/2-225, this.getHeight()-350, 210, 40);
 		closeTipsBT.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -262,14 +262,14 @@ public class OtherSetFrame extends JFrame{
 			 
 			public void mouseClicked(MouseEvent e) {
 				 if(Musicnow == 0) {
-					 JOptionPane.showMessageDialog(new JPanel(), "ÄúÒÑ¹Ø±ÕÒôÀÖ£¬Çë¿ªÆôºóÑ¡Ôñ", "²Ù×÷ÌáÊ¾",JOptionPane.WARNING_MESSAGE);  
+					 JOptionPane.showMessageDialog(new JPanel(), "æ‚¨å·²å…³é—­éŸ³ä¹ï¼Œè¯·å¼€å¯åé€‰æ‹©", "æ“ä½œæç¤º",JOptionPane.WARNING_MESSAGE);  
 					 return;
 				 }
 				 bgm.ChangeBGM("Sounds//Foxtail.wav");
 				 Musicnow =1;
-			     MusicChooseOne.setText("ÒÑÑ¡ÖĞ£º±³¾°ÒôÀÖ1");
-			     MusicChooseTwo.setText("±³¾°ÒôÀÖ2");
-			     MusicChooseThree.setText("±³¾°ÒôÀÖ3");
+			     MusicChooseOne.setText("å·²é€‰ä¸­ï¼šèƒŒæ™¯éŸ³ä¹1");
+			     MusicChooseTwo.setText("èƒŒæ™¯éŸ³ä¹2");
+			     MusicChooseThree.setText("èƒŒæ™¯éŸ³ä¹3");
 			}
 			
 		});
@@ -278,14 +278,14 @@ public class OtherSetFrame extends JFrame{
 			 
 			public void mouseClicked(MouseEvent e) {
 				 if(Musicnow == 0) {
-					 JOptionPane.showMessageDialog(new JPanel(), "ÄúÒÑ¹Ø±ÕÒôÀÖ£¬Çë¿ªÆôºóÑ¡Ôñ", "²Ù×÷ÌáÊ¾", JOptionPane.WARNING_MESSAGE);  
+					 JOptionPane.showMessageDialog(new JPanel(), "æ‚¨å·²å…³é—­éŸ³ä¹ï¼Œè¯·å¼€å¯åé€‰æ‹©", "æ“ä½œæç¤º", JOptionPane.WARNING_MESSAGE);  
 					 return;
 				 }
 				bgm.ChangeBGM("Sounds//TheTruthThatYouLeave.wav");
 				Musicnow =2;
-			     MusicChooseOne.setText("±³¾°ÒôÀÖ1");
-			     MusicChooseTwo.setText("ÒÑÑ¡ÖĞ£º±³¾°ÒôÀÖ2");
-			     MusicChooseThree.setText("±³¾°ÒôÀÖ3");
+			     MusicChooseOne.setText("èƒŒæ™¯éŸ³ä¹1");
+			     MusicChooseTwo.setText("å·²é€‰ä¸­ï¼šèƒŒæ™¯éŸ³ä¹2");
+			     MusicChooseThree.setText("èƒŒæ™¯éŸ³ä¹3");
 			}
 			
 		});
@@ -294,18 +294,18 @@ public class OtherSetFrame extends JFrame{
 			 
 			public void mouseClicked(MouseEvent e) {
 				 if(Musicnow == 0) {
-					 JOptionPane.showMessageDialog(new JPanel(), "ÄúÒÑ¹Ø±ÕÒôÀÖ£¬Çë¿ªÆôºóÑ¡Ôñ", "²Ù×÷ÌáÊ¾",JOptionPane.WARNING_MESSAGE);  
+					 JOptionPane.showMessageDialog(new JPanel(), "æ‚¨å·²å…³é—­éŸ³ä¹ï¼Œè¯·å¼€å¯åé€‰æ‹©", "æ“ä½œæç¤º",JOptionPane.WARNING_MESSAGE);  
 					 return;
 				 }
 				bgm.ChangeBGM("Sounds//Cry.wav");
 				Musicnow =3;
-			     MusicChooseOne.setText("±³¾°ÒôÀÖ1");
-			     MusicChooseTwo.setText("±³¾°ÒôÀÖ2");
-			     MusicChooseThree.setText("ÒÑÑ¡ÖĞ£º±³¾°ÒôÀÖ3");
+			     MusicChooseOne.setText("èƒŒæ™¯éŸ³ä¹1");
+			     MusicChooseTwo.setText("èƒŒæ™¯éŸ³ä¹2");
+			     MusicChooseThree.setText("å·²é€‰ä¸­ï¼šèƒŒæ™¯éŸ³ä¹3");
 			}
 			
 		});
-		//ÍË³ö°´Å¥
+		//é€€å‡ºæŒ‰é’®
 		JButton SubmitBT = new JButton("");
 		SubmitBT.setSize(220, 46);
 		SubmitBT.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -321,7 +321,7 @@ public class OtherSetFrame extends JFrame{
 			
 		});
 		 
-		//Ìí¼Ó×é¼ş
+		//æ·»åŠ ç»„ä»¶
 		contain.add(SubmitBT);
 		contain.add(DifficultChooseBT);
 		contain.add(DifficultBOX);
@@ -330,7 +330,7 @@ public class OtherSetFrame extends JFrame{
 		contain.add(MusicChooseBT);
 		contain.add(MusicChoosePanel);
 		contain.add(closeTipsBT);
-		//ÉèÖÃ´°¿ÚÎŞ±êÌâ
+		//è®¾ç½®çª—å£æ— æ ‡é¢˜
 		this.dispose();
 		this.setUndecorated(true);
 		this.setVisible(true);
