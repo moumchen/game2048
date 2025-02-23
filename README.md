@@ -19,7 +19,7 @@ A Java practice project, written in **2017**, a 2048 small game developed based 
 
 ## Preview
 ![20250223221628_rec_.gif](readme/20250223221628_rec_.gif)
-### Main Page: 
-![main page.53.24.png](readme/main%20page.53.24.png)
+### Main Page:
+![GamePage.png](readme/GamePage.png)
 ### Game Page
-![img_1.png](readme/Game Page.png)
+![MainPage.png](readme/MainPage.png)
